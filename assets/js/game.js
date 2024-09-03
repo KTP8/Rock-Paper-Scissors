@@ -77,7 +77,17 @@ function playerChoice(choice) {
     const difficulty = document.getElementById('difficulty').value;
     const computerChoice = getComputerChoice(difficulty);
 
-    document.getElementById("computerChoiceImg").src = `path/to/${computerChoice.toLowerCase()}.png`; // Update the path to match your image folder
+    // Map computer choice to the correct image path
+    const imagePaths = {
+        "Rock": "https://imgur.com/femz9LO.jpg",
+        "Paper": "https://imgur.com/DtQLv5q.jpg",
+        "Scissors": "https://imgur.com/XGDSf2s.jpg",
+        "Lizard": "https://imgur.com/AuVNy9m.jpg",
+        "Spock": "https://imgur.com/PpHIiny.jpg"
+    };
+
+
+    document.getElementById("computerChoiceImg").src = imagePaths[computerChoice];
     document.getElementById("computerChoiceImg").alt = computerChoice;
 
     const winner = determineWinner(choice, computerChoice);
