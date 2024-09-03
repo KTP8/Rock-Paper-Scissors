@@ -73,7 +73,8 @@ function playerChoice(choice) {
     }
 
     lastPlayerChoice = choice;
-    const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    // const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    const difficulty = document.getElementById('difficulty').value;
     const computerChoice = getComputerChoice(difficulty);
 
     document.getElementById("computerChoiceImg").src = `path/to/${computerChoice.toLowerCase()}.png`; // Update the path to match your image folder
