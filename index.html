@@ -1,34 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="assets/js/script.js"></script>
-        <header>
-            <div class="navigation-bar">
-                <div class="logo-container">
-                    <img src=""> <!--INSERT LOGO IMAGE HERE-->
-                </div>
-                <nav class="navbar">
-                    <ul>
-                        <!--NAVBAR CONTAINS LINKS TO HOME PAGE (where game is found) and RULES PAGE (game rules)-->
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                </nav>
-                </div>
-                <div class="header-image">
-                    <div class="header-title">Rock, Paper, Scissors, Lizard, Spock!</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Rock Paper Scissors Lizard Spock</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        .navigation-bar {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 10vh; /* Relative size for responsiveness */
+            width: auto;
+        }
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+        }
+        main {
+            padding: 20px;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 2%;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
+        .choices img {
+            cursor: pointer;
+            width: 18%; /* Relative width to fit 5 choices in a line on desktop */
+            max-width: 100px; /* Ensures image doesn't get too large on wider screens */
+            height: auto;
+        }
+        .results img {
+            margin-top: 20px;
+            width: 15vh; /* Relative size for responsiveness */
+            height: auto;
+        }
+        .attempts, .results, .score-board {
+            margin-top: 20px;
+        }
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            /* For tablet and smaller screens */
+            .choices img {
+                width: 30%; /* Fits 3 choices per line */
+            }
+            .header-title {
+                font-size: 1.5em;
+            }
+            .score {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            /* For mobile screens */
+            .choices img {
+                width: 45%; /* Fits 2-3 choices per line */
+            }
+            .header-title {
+                font-size: 1.2em;
+            }
+            .score {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navigation-bar">
+            <div class="logo-container">
+                <img src="path/to/logo.png" alt="Logo"> <!-- Replace with your logo image path -->
             </div>
-        </header>
-        <main>
-            <h1></h1>
-            <p style=""></p>
-        </main>
-    </body>
-</html>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Play Game</a></li>
+                    <li><a href="rules.html">Rules</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-title">Rock, Paper, Scissors, Lizard, Spock!</div>
+        <div class="score">
+            YOU <span id="playerScore">0</span> - <span id="computerScore">0</span> COMPUTER
+        </div>
+    </header>
 
+    <main>
+        <h2>CHOOSE ONE:</h2>
+        <div class="choices">
+            <img src="path/to/rock.png" alt="Rock" onclick="playerChoice('Rock')">
+            <img src="path/to/paper.png" alt="Paper" onclick="playerChoice('Paper')">
+            <img src="path/to/scissors.png" alt="Scissors" onclick="playerChoice('Scissors')">
+            <img src="path/to/lizard.png" alt="Lizard" onclick="playerChoice('Lizard')">
+            <img src="path/to/spock.png" alt="Spock" onclick="playerChoice('Spock')">
+        </div>
+
+        <div class="attempts">
+            <h3 id="attemptsRemaining">10/10 attempts remaining</h3>
+        </div>
+
+        <h2>COMPUTER CHOOSES:</h2>
+        <div class="results">
+            <img id="computerChoiceImg" src="" alt="Computer Choice">
+        </div>
+
+        <div class="score-board">
+            <h3>Score: YOU <span id="playerScoreBottom">0</span> - <span id="computerScoreBottom">0</span> COMPUTER</h3>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
