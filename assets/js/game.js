@@ -11,11 +11,11 @@ function getComputerChoice(difficulty) {
         // Easy: Computer choice is Random
         return choices[Math.floor(Math.random() * choices.length)];
     } else if (difficulty === "medium") {
-        // Medium: 50% chance to choose randomly
-        if (Math.random() < 0.6) {  // 50% chance
+        // Medium: 80% chance to choose randomly
+        if (Math.random() < 0.8) {  // 80% chance
             return choices[Math.floor(Math.random() * choices.length)];
         } else {
-            // 50% chance to counter player's last choice
+            // 20% chance to counter player's last choice
             if (lastPlayerChoice === null) {
                 return choices[Math.floor(Math.random() * choices.length)];
             } else {
@@ -31,11 +31,11 @@ function getComputerChoice(difficulty) {
             }
         }
     } else if (difficulty === "hard") {
-        // Hard: 30% chance to choose randomly
-        if (Math.random() < 0.3) {  // 30% chance
+        // Hard: 60% chance to choose randomly
+        if (Math.random() < 0.6) {  // 60% chance
             return choices[Math.floor(Math.random() * choices.length)];
         } else {
-            // 70% chance to counter player's last choice
+            // 40% chance to counter player's last choice
             if (lastPlayerChoice === null) {
                 return choices[Math.floor(Math.random() * choices.length)];
             } else {
