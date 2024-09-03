@@ -7,7 +7,7 @@ let attempts = 10;
 function getComputerChoice(difficulty) {
     if (difficulty === "easy") {
         // Easy: Computer choice is Random
-        return choices[Math.floor(Math.random() * choices.lenghth)];
+        return choices[Math.floor(Math.random() * choices.length)];
     } else if (difficulty === "medium") {
         // Medium: Computer choice is part of a 'Predictable Pattern' (i.e., always chooses Rock after Scissors)
         // May insert a more sophisticated pattern 
@@ -15,7 +15,7 @@ function getComputerChoice(difficulty) {
     } else if (difficulty === "hard") {
         // Hard: Computer uses an 'Adaptive Strategy' to beat the player's previous choice)
         // For simplicity computer uses a random choice of the options but this can be adapted based on user history
-        return choices [Math.floor(Math.random() * choices.lenghth)];
+        return choices [Math.floor(Math.random() * choices.length)];
     }
 }
 
