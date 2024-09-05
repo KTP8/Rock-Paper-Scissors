@@ -29,16 +29,16 @@ header {
 h1 {
     font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
     color: white;
-    font-size: 2.5em; /* Enlarged to take up 50% width */
-    margin: 10px 0; /* Vertical spacing */
-    text-align: center; /* Ensures center alignment */
+    font-size: 2.5em;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .navbar {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); /* Centers navbar under the title */
+    transform: translateX(-50%);
     display: flex;
     padding: 0;
 }
@@ -62,20 +62,28 @@ h1 {
 
 @media (max-width: 768px) {
     header {
-        height: 120px; /* Smaller header on mobile */
+        height: 120px;
     }
 
     .logo-container img {
-        width: 60px; /* Smaller logo */
+        width: 60px;
     }
 
     h1 {
-        font-size: 1.8em; /* Smaller font size for limited space */
+        font-size: 1.8em;
     }
 }
 
 main {
     padding: 20px;
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+    padding: 0;
+    margin: 0 auto; /* Center-align the list */
+    display: inline-block; /* Ensures the bullets appear with the list */
 }
 
 .difficulty-select, .attempts, .results, .score-board {
@@ -118,19 +126,4 @@ main {
 
 .attempts, .results, .score-board {
     margin-top: 20px;
-}
-
-/* Additional styles for rule formatting */
-h3 {
-    text-decoration: underline;
-}
-
-ul {
-    text-align: left;
-    padding-left: 20px; /* Adjust as needed */
-}
-
-.important-text {
-    font-style: italic;
-    font-size: larger;
 }
