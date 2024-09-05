@@ -67,8 +67,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 18%; /* Adjust to control the size of each choice container */
-    max-width: 100px;
+    width: auto; /* Allow container to scale with the image */
 }
 
 /* Style for the choice name */
@@ -88,9 +87,10 @@ main {
 
 .choices img {
     cursor: pointer;
-    width: 18%; /* Relative width to fit 5 choices in a line on desktop */
+    width: 18%; /* Ensure relative size */
     max-width: 100px; /* Ensures image doesn't get too large on wider screens */
     height: auto;
+    flex-shrink: 0; /* Prevent images from shrinking */
 }
 
 .results img {
@@ -110,7 +110,7 @@ main {
         width: 30%; /* Fits 3 choices per line */
     }
     .choice-container {
-        width: 30%;
+        width: auto; /* Ensure the container adapts to image size */
     }
     .header-title {
         font-size: 1.5em;
@@ -126,7 +126,7 @@ main {
         width: 45%; /* Fits 2-3 choices per line */
     }
     .choice-container {
-        width: 45%;
+        width: auto;
     }
     .header-title {
         font-size: 1.2em;
