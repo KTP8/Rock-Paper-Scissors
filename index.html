@@ -5,104 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rock Paper Scissors Lizard Spock</title>
-    <style>
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            background-color: #cf805e;
-        }
-        .navigation-bar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-        .logo-container img {
-            height: 2vh; /* Relative size for responsiveness */
-            width: auto;
-        }
-        .navbar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        .navbar ul li {
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-        .header-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-        .score {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        main {
-            padding: 20px;
-        }
-        .choices {
-            display: flex;
-            justify-content: center;
-            gap: 2%;
-            margin-top: 20px;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        }
-        .choices img {
-            cursor: pointer;
-            width: 18%; /* Relative width to fit 5 choices in a line on desktop */
-            max-width: 100px; /* Ensures image doesn't get too large on wider screens */
-            height: auto;
-        }
-        .results img {
-            margin-top: 20px;
-            width: 15vh; /* Relative size for responsiveness */
-            height: auto;
-        }
-        .attempts, .results, .score-board {
-            margin-top: 20px;
-        }
-        /* Responsive styling for smaller devices */
-        @media (max-width: 768px) {
-            /* For tablet and smaller screens */
-            .choices img {
-                width: 30%; /* Fits 3 choices per line */
-            }
-            .header-title {
-                font-size: 1.5em;
-            }
-            .score {
-                font-size: 1em;
-            }
-        }
-        @media (max-width: 480px) {
-            /* For mobile screens */
-            .choices img {
-                width: 45%; /* Fits 2-3 choices per line */
-            }
-            .header-title {
-                font-size: 1.2em;
-            }
-            .score {
-                font-size: 0.9em;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -124,7 +26,7 @@
     </header>
 
     <main>
-        <!--DROPDOWN FOR DIFFICULTY-->
+        <!-- DROPDOWN FOR DIFFICULTY -->
         <div class="difficulty-select">
             <label for="difficulty">Choose Difficulty:</label>
             <select id="difficulty">
@@ -136,11 +38,26 @@
         
         <h2>CHOOSE ONE:</h2>
         <div class="choices">
-            <img src="https://imgur.com/femz9LO.jpg" alt="Rock" onclick="playerChoice('Rock')">
-            <img src="https://imgur.com/DtQLv5q.jpg" alt="Paper" onclick="playerChoice('Paper')">
-            <img src="https://imgur.com/XGDSf2s.jpg" alt="Scissors" onclick="playerChoice('Scissors')">
-            <img src="https://imgur.com/AuVNy9m.jpg" alt="Lizard" onclick="playerChoice('Lizard')">
-            <img src="https://imgur.com/PpHIiny.jpg" alt="Spock" onclick="playerChoice('Spock')">
+            <div class="choice-container">
+                <img src="https://imgur.com/femz9LO.jpg" alt="Rock" onclick="playerChoice('Rock')">
+                <p>Rock</p>
+            </div>
+            <div class="choice-container">
+                <img src="https://imgur.com/DtQLv5q.jpg" alt="Paper" onclick="playerChoice('Paper')">
+                <p>Paper</p>
+            </div>
+            <div class="choice-container">
+                <img src="https://imgur.com/XGDSf2s.jpg" alt="Scissors" onclick="playerChoice('Scissors')">
+                <p>Scissors</p>
+            </div>
+            <div class="choice-container">
+                <img src="https://imgur.com/AuVNy9m.jpg" alt="Lizard" onclick="playerChoice('Lizard')">
+                <p>Lizard</p>
+            </div>
+            <div class="choice-container">
+                <img src="https://imgur.com/PpHIiny.jpg" alt="Spock" onclick="playerChoice('Spock')">
+                <p>Spock</p>
+            </div>
         </div>
 
         <div class="attempts">

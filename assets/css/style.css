@@ -1,0 +1,137 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #cf805e;
+}
+
+.navigation-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-container img {
+    height: 2vh; /* Relative size for responsiveness */
+    width: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.header-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.score {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.difficulty-select {
+    margin-bottom: 20px;
+}
+
+/* Container for each choice (image and text) */
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18%; /* Adjust to control the size of each choice container */
+    max-width: 100px;
+}
+
+/* Style for the choice name */
+.choice-container p {
+    margin: 10px 0 0 0; /* Space above the text */
+    font-size: 1.1em; /* Adjust the font size as necessary */
+    text-align: center;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.choices img {
+    cursor: pointer;
+    width: 18%; /* Relative width to fit 5 choices in a line on desktop */
+    max-width: 100px; /* Ensures image doesn't get too large on wider screens */
+    height: auto;
+}
+
+.results img {
+    margin-top: 20px;
+    width: 15vh; /* Relative size for responsiveness */
+    height: auto;
+}
+
+.attempts, .results, .score-board {
+    margin-top: 20px;
+}
+
+/* Responsive styling for smaller devices */
+@media (max-width: 768px) {
+    /* For tablet and smaller screens */
+    .choices img {
+        width: 30%; /* Fits 3 choices per line */
+    }
+    .choice-container {
+        width: 30%;
+    }
+    .header-title {
+        font-size: 1.5em;
+    }
+    .score {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile screens */
+    .choices img {
+        width: 45%; /* Fits 2-3 choices per line */
+    }
+    .choice-container {
+        width: 45%;
+    }
+    .header-title {
+        font-size: 1.2em;
+    }
+    .score {
+        font-size: 0.9em;
+    }
+}
