@@ -30,7 +30,7 @@ header {
 }
 
 .logo-container img {
-    max-width: 100px; /* Control max size to avoid cutoff */
+    width: 10%; /* Control max size to avoid cutoff */
     position: absolute;
     left: 10px; /* Aligning precisely to the top left */
     top: 10px;
