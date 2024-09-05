@@ -8,40 +8,43 @@ body {
 
 header {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Adjusts child elements to space out */
-    padding: 0 10px; /* Padding to avoid touching the edges */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Distribute space between children */
+    padding: 0 20px; /* Padding on both sides */
     width: 100%; /* Full viewport width */
     background-color: #cf805e; /* Orange background */
-    height: 150px; /* Fixed height for consistency */
+    position: relative;
+    height: 150px;
 }
 
 .logo-container {
-    flex: 0 0 auto; /* Do not grow or shrink, maintain size */
+    flex: 0 1 auto; /* Do not grow, but allow shrink and base width on content */
 }
 
 .logo-container img {
-    width: 80px; /* Controlled width */
-    height: auto; /* Maintain aspect ratio */
+    width: 80px; /* Fixed width to maintain aspect ratio */
+    height: auto;
 }
 
 .header-title-image {
-    flex: 1 0 auto; /* Grow to fill available space, no shrink */
+    flex: 1 0 auto; /* Allows it to grow and shrink but base width on content */
     height: 120px; /* Controlled height */
-    align-self: center; /* Center vertically within header */
-    margin: 0 auto; /* Center horizontally */
+    width: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Auto margins for horizontal centering */
 }
 
 .navigation-bar {
+    position: absolute;
+    top: 0; /* Align at the top of the header */
+    right: 10px; /* Align to the right */
     display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align nav items to the right */
+    align-items: flex-start; /* Align navigation links to the top */
 }
 
 .navbar ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
 }
 
@@ -55,23 +58,23 @@ header {
 }
 
 .score {
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    right: 10px; /* Position to the right */
     font-size: 0.8em;
-    color: #fff;
+    color: #fff; /* Enhanced visibility */
 }
 
 @media (max-width: 768px) {
     header {
-        height: 100px;
+        height: 100px; /* Adjusted for smaller screens */
     }
-
     .logo-container img {
-        width: 60px; /* Smaller logo for smaller screens */
+        width: 60px; /* Adjusted for smaller screens */
     }
-
     .header-title-image {
-        height: 80px; /* Reduced height for smaller header */
+        height: 80px; /* Adjusted for smaller screens */
     }
-
     .score {
         font-size: 0.7em; /* Smaller text on mobile */
     }
@@ -93,7 +96,7 @@ main {
 }
 
 .choice-container p {
-    margin: 10px 0 0;
+    margin-top: 10px;
     font-size: 1.1em;
     text-align: center;
 }
@@ -111,7 +114,7 @@ main {
     width: 15vh; /* Dynamic width based on viewport height */
     max-width: 100px; /* Maximum width */
     height: auto;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
 .results img {
