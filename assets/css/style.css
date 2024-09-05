@@ -14,7 +14,7 @@ header {
     width: 100%; /* Ensuring width covers the entire viewport */
     background-color: #cf805e; /* Setting the background color for the header */
     justify-content: center; /* Center content vertically */
-    min-height: 75px; /* To accommodate for img sizing */
+    min-height: 150px; /* Increased to accommodate for score display */
     position: relative; /* Necessary for absolute positioning of children */
 }
 
@@ -25,21 +25,24 @@ header {
     align-items: center;
     padding: 0 10px;
     position: absolute;
-    bottom: 0;
+    bottom: 10px; /* Adjusted for clear separation */
     right: 0;
 }
 
 .logo-container img {
-    width: 5%;
-    height: 75px; /* Defined height to match the header's height */
+    max-width: 100px; /* Adjusted to prevent distortion */
+    max-height: 50px; /* Keeps aspect ratio */
     position: absolute;
-    left: 0;
-    top: 0; /* Logo container should sit flush with top left */
+    left: 10px; /* Offset for aesthetic spacing */
+    top: 10px; /* Offset for aesthetic spacing */
+    width: auto; /* Auto-width for flexible resizing */
+    height: auto; /* Auto-height for flexible resizing */
 }
 
 .header-title-image {
     width: auto; /* Width adjusts automatically based on height */
-    height: 75px; /* Matching height to maintain uniformity with the logo */
+    height: 40px; /* Matching height to maintain uniformity with the logo */
+    margin-top: 20px; /* Provides spacing from the top of the header */
 }
 
 .navbar ul {
@@ -58,6 +61,14 @@ header {
     color: #333;
 }
 
+.score {
+    font-size: 0.8em; /* Smaller font size for the score text */
+    position: absolute;
+    bottom: 5px; /* Positioned at the bottom of the header */
+    width: 100%;
+    text-align: center; /* Center the score text */
+}
+
 @media (max-width: 768px) {
     .logo-container img {
         width: 10%; /* Smaller width on mobile devices */
@@ -67,13 +78,11 @@ header {
         height: 50px; /* Smaller height on mobile devices */
     }
     header {
-        min-height: 50px; /* Smaller height on mobile devices */
+        min-height: 100px; /* Smaller header height on mobile devices */
     }
-}
-
-.score {
-    font-size: 1.2em;
-    margin: 10px 0;
+    .score {
+        font-size: 0.7em; /* Even smaller font size for mobile */
+    }
 }
 
 main {
