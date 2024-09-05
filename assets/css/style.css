@@ -8,44 +8,50 @@ body {
 
 header {
     display: flex;
-    align-items: center; /* Vertically center content */
-    justify-content: space-between; /* Distribute space between children */
-    padding: 0 20px; /* Padding on both sides */
+    align-items: center;
+    padding: 0 10px; /* Padding to avoid touching the edges */
     width: 100%; /* Full viewport width */
     background-color: #cf805e; /* Orange background */
-    position: relative;
-    height: 150px;
+    height: 150px; /* Fixed height for consistency */
+    position: relative; /* Allows absolute positioning within the header */
 }
 
 .logo-container {
-    flex: 0 1 auto; /* Do not grow, but allow shrink and base width on content */
+    position: absolute; /* Absolute positioning for precise control */
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height of the header */
+    display: flex;
+    align-items: center; /* Center the logo vertically within its space */
 }
 
 .logo-container img {
-    width: 80px; /* Fixed width to maintain aspect ratio */
-    height: auto;
+    width: 80px; /* Controlled width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .header-title-image {
-    flex: 1 0 auto; /* Allows it to grow and shrink but base width on content */
+    position: absolute; /* Absolute positioning for precise control */
+    top: 0;
+    left: 50%; /* Centering horizontally */
+    transform: translateX(-50%); /* Shift left by half its width */
     height: 120px; /* Controlled height */
     width: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Auto margins for horizontal centering */
 }
 
 .navigation-bar {
     position: absolute;
-    top: 0; /* Align at the top of the header */
-    right: 10px; /* Align to the right */
+    top: 0;
+    right: 0;
     display: flex;
-    align-items: flex-start; /* Align navigation links to the top */
+    align-items: center;
 }
 
 .navbar ul {
     list-style-type: none;
+    display: flex;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 .navbar ul li {
@@ -59,24 +65,27 @@ header {
 
 .score {
     position: absolute;
-    bottom: 10px; /* Position at the bottom */
-    right: 10px; /* Position to the right */
+    bottom: 10px;
+    right: 10px;
     font-size: 0.8em;
-    color: #fff; /* Enhanced visibility */
+    color: #fff;
 }
 
 @media (max-width: 768px) {
     header {
-        height: 100px; /* Adjusted for smaller screens */
+        height: 100px;
     }
+
     .logo-container img {
-        width: 60px; /* Adjusted for smaller screens */
+        width: 60px; /* Adjusted width for smaller header */
     }
+
     .header-title-image {
-        height: 80px; /* Adjusted for smaller screens */
+        height: 80px; /* Adjusted height for smaller header */
     }
+
     .score {
-        font-size: 0.7em; /* Smaller text on mobile */
+        font-size: 0.7em; /* Smaller font size for mobile */
     }
 }
 
@@ -111,8 +120,8 @@ main {
 
 .choices img {
     cursor: pointer;
-    width: 15vh; /* Dynamic width based on viewport height */
-    max-width: 100px; /* Maximum width */
+    width: 15vh;
+    max-width: 100px;
     height: auto;
     flex-shrink: 0;
 }
