@@ -59,6 +59,10 @@ h1 {
     font-weight: bold;
 }
 
+*, *::before, *::after { /* To ensure padding and borders are considered for all element width calculations */
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     header {
         height: 120px; /* Smaller header on mobile */
@@ -69,7 +73,12 @@ h1 {
     }
 
     h1 {
-        font-size: 1em; /* Smaller font size for limited space */
+        font-size: 1.2em; /* Smaller font size for limited space */
+    }
+
+    footer {
+        position: fixed; /* Maintain bottom position */
+        width: 100%;
     }
 }
 
