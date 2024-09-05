@@ -8,12 +8,13 @@ body {
 
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Padding for some spacing from edges */
-    width: 100%; /* Full viewport width */
-    background-color: #cf805e; /* Orange background */
-    height: 150px; /* Consistent header height */
-    position: relative; /* Required for absolute positioning of child elements */
+    padding: 0 20px;
+    width: 100%;
+    background-color: #cf805e;
+    height: 150px;
+    position: relative;
 }
 
 .logo-container {
@@ -25,6 +26,15 @@ header {
 .logo-container img {
     width: 80px;
     height: auto;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Ensure visibility on orange background */
+    font-size: 1.5em; /* Larger size for header title */
 }
 
 .navigation-bar {
@@ -46,7 +56,8 @@ header {
 
 .navbar ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-weight: bold;
 }
 
 .score {
@@ -54,8 +65,8 @@ header {
     bottom: 0;
     right: 0;
     font-size: 0.8em;
-    color: #fff;
-    padding: 5px; /* Padding to ensure visibility and prevent cut-off */
+    color: white;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {
@@ -76,8 +87,8 @@ main {
     padding: 20px;
 }
 
-.difficulty-select {
-    margin-bottom: 20px;
+.difficulty-select, .attempts, .results, .score-board {
+    margin-top: 20px;
 }
 
 .choice-container {
