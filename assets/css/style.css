@@ -10,11 +10,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    width: 100%;
-    background-color: #cf805e;
-    height: 150px;
-    position: relative;
+    padding: 0 20px; /* Padding for some spacing from edges */
+    width: 100%; /* Full viewport width */
+    background-color: #cf805e; /* Orange background */
+    height: 150px; /* Consistent header height */
+    position: relative; /* Required for absolute positioning of child elements */
 }
 
 .logo-container {
@@ -32,9 +32,9 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    height: 120px;
-    width: auto;
+    transform: translate(-50%, -50%); /* Centers both horizontally and vertically */
+    height: 120px; /* Controlled height */
+    width: auto; /* Width adjusts based on height to maintain aspect ratio */
 }
 
 .navigation-bar {
@@ -45,9 +45,9 @@ header {
 
 .navbar ul {
     list-style-type: none;
+    display: flex;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 .navbar ul li {
@@ -61,10 +61,11 @@ header {
 
 .score {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
     font-size: 0.8em;
     color: #fff;
+    padding: 5px; /* Padding to ensure visibility and prevent cut-off */
 }
 
 @media (max-width: 768px) {
