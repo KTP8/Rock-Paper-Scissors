@@ -119,3 +119,18 @@ main {
 .attempts, .results, .score-board {
     margin-top: 20px;
 }
+
+/* Additional styles for rule formatting */
+h3 {
+    text-decoration: underline;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px; /* Adjust as needed */
+}
+
+.important-text {
+    font-style: italic;
+    font-size: larger;
+}
