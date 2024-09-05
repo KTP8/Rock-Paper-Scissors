@@ -8,51 +8,33 @@ let lastPlayerChoice = null;
 // Function to get computer choice based on difficulty
 function getComputerChoice(difficulty) {
     if (difficulty === "easy") {
-        // Easy: Computer choice is Random
         return choices[Math.floor(Math.random() * choices.length)];
     } else if (difficulty === "medium") {
-        // Medium: 80% chance to choose randomly
-        if (Math.random() < 0.8) {  // 80% chance
+        if (Math.random() < 0.8) {
             return choices[Math.floor(Math.random() * choices.length)];
         } else {
-            // 20% chance to counter player's last choice
-            if (lastPlayerChoice === null) {
-                return choices[Math.floor(Math.random() * choices.length)];
-            } else {
-                // Determine what beats the player's last choice
-                const winMap = {
-                    "Rock": "Paper",
-                    "Paper": "Scissors",
-                    "Scissors": "Rock",
-                    "Lizard": "Rock",
-                    "Spock": "Lizard"
-                };
-                return winMap[lastPlayerChoice];
-            }
+            return lastPlayerChoice === null ? choices[Math.floor(Math.random() * choices.length)] : getCounterChoice(lastPlayerChoice);
         }
     } else if (difficulty === "hard") {
-        // Hard: 60% chance to choose randomly
-        if (Math.random() < 0.6) {  // 60% chance
+        if (Math.random() < 0.6) {
             return choices[Math.floor(Math.random() * choices.length)];
         } else {
-            // 40% chance to counter player's last choice
-            if (lastPlayerChoice === null) {
-                return choices[Math.floor(Math.random() * choices.length)];
-            } else {
-                // Determine what beats the player's last choice
-                const winMap = {
-                    "Rock": "Paper",
-                    "Paper": "Scissors",
-                    "Scissors": "Rock",
-                    "Lizard": "Rock",
-                    "Spock": "Lizard"
-                };
-                return winMap[lastPlayerChoice];
-            }
+            return lastPlayerChoice === null ? choices[Math.floor(Math.random() * choices.length)] : getCounterChoice(lastPlayerChoice);
         }
     }
 }
 
+// Function to determine what beats the player's last choice
+function getCounterChoice(playerChoice) {
+    const winMap = {
+        "Rock": "Paper",
+        "Paper": "Scissors",
+        "Scissors": "Rock",
+        "Lizard": "Rock",
+        "Spock": "Lizard"
+    };
+    return winMap[playerChoice];
+}
 
 // Function to update the score display
 function updateScore() {
@@ -73,7 +55,6 @@ function determineWinner(playerChoice, computerChoice) {
         return "draw";
     }
 
-    // Win conditions for player
     const winConditions = {
         "Rock": ["Scissors", "Lizard"],
         "Paper": ["Rock", "Spock"],
@@ -93,7 +74,6 @@ function playerChoice(choice) {
     }
 
     lastPlayerChoice = choice;
-    // const difficulty = document.querySelector('input[name="difficulty"]:checked').value;
     const difficulty = document.getElementById('difficulty').value;
     const computerChoice = getComputerChoice(difficulty);
 
@@ -105,7 +85,6 @@ function playerChoice(choice) {
         "Lizard": "https://imgur.com/AuVNy9m.jpg",
         "Spock": "https://imgur.com/PpHIiny.jpg"
     };
-
 
     document.getElementById("computerChoiceImg").src = imagePaths[computerChoice];
     document.getElementById("computerChoiceImg").alt = computerChoice;
