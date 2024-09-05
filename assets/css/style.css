@@ -15,33 +15,31 @@ header {
     background-color: #cf805e; /* Setting the background color for the header */
     justify-content: center; /* Center content vertically */
     position: relative; /* Necessary for absolute positioning of children */
-    min-height: 150px; /* Increased to accommodate for score display */
+    min-height: 150px; /* Adjusted to provide more space */
+    height: 200px; /* Fixed height to maintain consistency */
 }
 
 .navigation-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
     position: absolute;
-    bottom: 10px; /* Adjusted for clear separation */
-    right: 0;
+    top: 10px; /* Align at the top of the header */
+    right: 10px; /* Align to the right */
+    display: flex;
+    justify-content: flex-end;
 }
 
 .logo-container img {
-    width: 10%; /* Control max size to avoid cutoff */
     position: absolute;
-    left: 10px; /* Aligning precisely to the top left */
-    top: 10px;
-    height: auto; /* Maintaining aspect ratio */
+    left: 10px; /* Aligned to the left */
+    top: 10px; /* Aligned to the top */
+    width: 80px; /* Fixed width to prevent distortion */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .header-title-image {
-    width: calc(100% - 180px); /* Adjusting width to leave space for score */
-    height: auto; /* Adjusting height to maintain aspect ratio */
-    order: 2; /* Ensures center alignment */
-    align-self: center; /* Centers the title image */
+    width: auto;
+    height: 80%; /* 80% of the header's height */
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .navbar ul {
@@ -61,25 +59,26 @@ header {
 }
 
 .score {
-    font-size: 0.8em; /* Smaller font size for the score text */
     position: absolute;
-    bottom: 5px; /* Positioned at the bottom of the header */
-    right: 10px; /* Positioned at the right to avoid overlapping */
-    color: #ffffff; /* Making score text white for readability */
+    bottom: 10px; /* Position at the bottom */
+    right: 10px; /* Position to the right */
+    font-size: 0.8em; /* Smaller font size */
+    color: #fff; /* Color changed to white for visibility */
 }
 
 @media (max-width: 768px) {
+    header {
+        min-height: 100px; /* Reduced header height on smaller screens */
+        height: 120px;
+    }
     .logo-container img {
-        max-width: 50px; /* Smaller logo on mobile */
+        width: 60px; /* Smaller logo size for mobile */
     }
     .header-title-image {
-        width: calc(100% - 100px); /* Smaller width on mobile devices */
-    }
-    header {
-        min-height: 100px; /* Smaller header height on mobile devices */
+        height: 80%; /* Maintain height ratio on mobile */
     }
     .score {
-        font-size: 0.7em; /* Even smaller font size for mobile */
+        font-size: 0.7em; /* Smaller font size on mobile */
     }
 }
 
@@ -91,40 +90,38 @@ main {
     margin-bottom: 20px;
 }
 
-/* Container for each choice (image and text) */
 .choice-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto; /* Allow container to scale with the image */
+    width: auto;
 }
 
-/* Style for the choice name */
 .choice-container p {
-    margin: 10px 0 0 0; /* Space above the text */
-    font-size: 1.1em; /* Adjust the font size as necessary */
+    margin: 10px 0 0 0;
+    font-size: 1.1em;
     text-align: center;
 }
 
 .choices {
     display: flex;
     justify-content: center;
-    gap: 2%; /* Space between choices */
+    gap: 2%;
     margin-top: 20px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .choices img {
     cursor: pointer;
-    width: 15vh; /* Use the same relative height as the computer choice */
-    max-width: 100px; /* You can adjust this to match the size */
+    width: 15vh;
+    max-width: 100px;
     height: auto;
-    flex-shrink: 0; /* Prevent images from shrinking */
+    flex-shrink: 0;
 }
 
 .results img {
     margin-top: 20px;
-    width: 15vh; /* Relative size for responsiveness */
+    width: 15vh;
     height: auto;
 }
 
@@ -132,49 +129,43 @@ main {
     margin-top: 20px;
 }
 
-/* Media Queries */
-
-/* Desktop styling (larger screens) */
 @media (min-width: 769px) {
     .choices img {
-        width: 15vh; /* Make the image size similar to computer choice */
-        max-width: 180px; /* Maximum width for larger screens */
-        height: auto;
+        width: 15vh;
+        max-width: 180px;
     }
 
     .choices {
-        gap: 1.5%; /* Smaller gap between images */
+        gap: 1.5%;
     }
 }
 
-/* Tablet styling */
 @media (max-width: 768px) {
     .choices img {
-        width: 30%; /* Fits 3 choices per line */
+        width: 30%;
     }
     .choice-container {
-        width: auto; /* Ensure the container adapts to image size */
+        width: auto;
     }
     .header-title {
-        font-size: 1.5em; /* Larger font size for better readability */
+        font-size: 1.5em;
     }
     .score {
-        font-size: 1em; /* Smaller font size for compact layout */
+        font-size: 1em;
     }
 }
 
-/* Mobile styling */
 @media (max-width: 480px) {
     .choices img {
-        width: 45%; /* Fits 2-3 choices per line, improving touch target size */
+        width: 45%;
     }
     .choice-container {
-        width: auto; /* Adaptive width for responsive image display */
+        width: auto;
     }
     .header-title {
-        font-size: 1.2em; /* Moderate increase in font size for readability */
+        font-size: 1.2em;
     }
     .score {
-        font-size: 0.9em; /* Smaller font size to fit mobile screens */
+        font-size: 0.9em;
     }
 }
