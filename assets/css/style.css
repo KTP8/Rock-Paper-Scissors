@@ -134,3 +134,15 @@ ul {
     font-style: italic;
     font-size: larger;
 }
+
+footer {
+    text-align: right;
+    padding: 10px 0;
+    background-color: grey;
+    color: yellow;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.9em;
+}
