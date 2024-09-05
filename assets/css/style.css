@@ -87,7 +87,7 @@ main {
 
 .choices img {
     cursor: pointer;
-    width: 18%; /* Ensure relative size */
+    width: 18%; /* Ensures a relative size */
     max-width: 100px; /* Ensures image doesn't get too large on wider screens */
     height: auto;
     flex-shrink: 0; /* Prevent images from shrinking */
@@ -103,9 +103,25 @@ main {
     margin-top: 20px;
 }
 
-/* Responsive styling for smaller devices */
+/* Media Queries */
+
+/* Desktop styling (larger screens) */
+@media (min-width: 769px) {
+    /* Increase the size of images to fill screen width */
+    .choices img {
+        width: 15%; /* Increase image size for desktop */
+        max-width: 180px; /* Allow the images to scale up */
+        height: auto;
+    }
+
+    /* Adjust the gap to distribute images evenly */
+    .choices {
+        gap: 1.5%; /* Smaller gap between images */
+    }
+}
+
+/* Tablet styling */
 @media (max-width: 768px) {
-    /* For tablet and smaller screens */
     .choices img {
         width: 30%; /* Fits 3 choices per line */
     }
@@ -120,8 +136,8 @@ main {
     }
 }
 
+/* Mobile styling */
 @media (max-width: 480px) {
-    /* For mobile screens */
     .choices img {
         width: 45%; /* Fits 2-3 choices per line */
     }
