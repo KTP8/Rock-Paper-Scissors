@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     let playerScore = 0;
     let computerScore = 0;
@@ -64,4 +64,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial setup calls
     updateScore();
     updateAttempts();
-});
