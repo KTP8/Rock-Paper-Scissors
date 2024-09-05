@@ -8,54 +8,60 @@ body {
 
 header {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     justify-content: space-between;
     background-color: #cf805e;
-    padding: 10px 20px;
+    padding: 5px 20px 0 20px; /* Reduce top padding to make logo flush */
     width: 100%;
     height: 150px;
     position: relative;
 }
 
 .logo-container img {
-    width: 80px; /* Controlled width for logo */
-    height: auto; /* Maintain aspect ratio */
+    width: 80px;
+    height: auto;
+    margin-top: 5px; /* Adjust to make logo nearly flush with the top */
 }
 
 h1 {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; /* Fun, widely available fonts */
     color: white;
-    font-size: 1.5em;
-    margin: 0 auto; /* Center title between logo and nav */
+    font-size: 1.8em; /* Larger font size */
+    width: 50%; /* Takes up 50% of the header's width */
+    text-align: center; /* Ensure text is centered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.navbar {
+.navigation-bar {
     position: absolute;
-    top: 0;
-    right: 20px;
-    display: flex;
-    align-items: center;
+    top: 5px; /* Adjusted to better align with the top */
+    right: 15px; /* Slightly moved left from the edge */
 }
 
 .navbar ul {
     list-style-type: none;
     display: flex;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 .navbar ul li {
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 
 .score {
     position: absolute;
-    bottom: 10px;
-    right: 20px;
+    bottom: 5px; /* Adjusted for better visibility */
+    right: 15px; /* Slightly moved left from the edge */
     color: white;
     font-size: 0.8em;
 }
@@ -69,8 +75,12 @@ h1 {
         width: 60px;
     }
 
+    h1 {
+        font-size: 1.4em; /* Slightly smaller on mobile */
+    }
+
     .score {
-        font-size: 0.7em;
+        font-size: 0.7em; /* Adjust for mobile visibility */
     }
 }
 
