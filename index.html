@@ -14,7 +14,8 @@
         <h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Play Game</a></li>
+                <!--Navigation for both "Play Game" and the "Rules" of the game-->
+                <li><a href="index.html">Play Game</a></li> 
                 <li><a href="rules.html">Rules</a></li>
             </ul>
         </nav>
@@ -22,7 +23,8 @@
 
     <main>
         <div class="difficulty-select">
-            <label for="difficulty">Choose Difficulty:</label>
+            <!--User can select what difficulty they wish to play, with diff levels using different code to select computer hand-->
+            <label for="difficulty">Choose Difficulty:</label> 
             <select id="difficulty">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -32,6 +34,7 @@
         
         <h2>CHOOSE ONE:</h2>
         <div class="choices">
+            <!--Each user selection choice is within container to ensure that when device size changes, formatting for both text and image is not necessary. Instead the container moves relativley-->
             <div class="choice-container">
                 <img src="https://imgur.com/femz9LO.jpg" alt="Rock" onclick="playerChoice('Rock')">
                 <p>Rock</p>
@@ -56,6 +59,7 @@
 
         <h2>COMPUTER CHOOSES:</h2>
         <div class="results">
+            <!--Placeholder image before computer has made its first choice-->
             <img id="computerChoiceImg" src="https://imgur.com/rzV1AO6.jpg" alt="Computer Choice">
         </div>
 

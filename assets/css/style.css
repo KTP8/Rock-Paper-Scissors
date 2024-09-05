@@ -127,7 +127,7 @@ h3 {
 ul {
     display: inline-block;
     text-align: left;
-    padding-left: 20px; /* Adjust padding to align bullet points correctly */
+    padding-left: 20px; /* Adjusted padding to align bullet points correctly */
 }
 
 .important-text {
