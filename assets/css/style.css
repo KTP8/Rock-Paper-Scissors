@@ -9,43 +9,39 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 100%; /* Ensuring width covers the entire viewport */
-    background-color: #cf805e; /* Setting the background color for the header */
-    position: relative; /* Necessary for absolute positioning of children */
-    height: 150px; /* Fixed height for consistent sizing */
+    justify-content: space-between; /* Adjusts child elements to space out */
+    padding: 0 10px; /* Padding to avoid touching the edges */
+    width: 100%; /* Full viewport width */
+    background-color: #cf805e; /* Orange background */
+    height: 150px; /* Fixed height for consistency */
 }
 
-.navigation-bar {
-    position: absolute;
-    top: 10px; /* Ensured alignment to the top */
-    right: 10px; /* Ensured alignment to the right */
-    display: flex;
-    justify-content: flex-end;
+.logo-container {
+    flex: 0 0 auto; /* Do not grow or shrink, maintain size */
 }
 
 .logo-container img {
-    position: absolute;
-    left: 0; /* Flush to the left */
-    top: 0; /* Flush to the top */
-    width: 80px; /* Fixed width for the logo */
+    width: 80px; /* Controlled width */
     height: auto; /* Maintain aspect ratio */
 }
 
 .header-title-image {
-    position: absolute; /* Absolute positioning for precise control */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust the position to be truly centered */
-    height: 120px; /* Adjusted height to fit within the header */
-    width: auto; /* Maintain aspect ratio */
+    flex: 1 0 auto; /* Grow to fill available space, no shrink */
+    height: 120px; /* Controlled height */
+    align-self: center; /* Center vertically within header */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align nav items to the right */
 }
 
 .navbar ul {
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
 }
 
@@ -59,25 +55,25 @@ header {
 }
 
 .score {
-    position: absolute;
-    bottom: 10px; /* Maintained positioning */
-    right: 10px; /* Maintained positioning */
-    font-size: 0.8em; /* Font size maintained */
-    color: #fff; /* Enhanced visibility */
+    font-size: 0.8em;
+    color: #fff;
 }
 
 @media (max-width: 768px) {
     header {
-        height: 100px; /* Adjusted for smaller screens */
+        height: 100px;
     }
+
     .logo-container img {
-        width: 60px; /* Adjusted for smaller screens */
+        width: 60px; /* Smaller logo for smaller screens */
     }
+
     .header-title-image {
-        height: 80px; /* Adjusted for smaller screens */
+        height: 80px; /* Reduced height for smaller header */
     }
+
     .score {
-        font-size: 0.7em; /* Smaller font size on mobile */
+        font-size: 0.7em; /* Smaller text on mobile */
     }
 }
 
@@ -97,7 +93,7 @@ main {
 }
 
 .choice-container p {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     font-size: 1.1em;
     text-align: center;
 }
@@ -112,10 +108,10 @@ main {
 
 .choices img {
     cursor: pointer;
-    width: 15vh;
-    max-width: 100px;
+    width: 15vh; /* Dynamic width based on viewport height */
+    max-width: 100px; /* Maximum width */
     height: auto;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .results img {
@@ -126,45 +122,4 @@ main {
 
 .attempts, .results, .score-board {
     margin-top: 20px;
-}
-
-@media (min-width: 769px) {
-    .choices img {
-        width: 15vh;
-        max-width: 180px;
-    }
-
-    .choices {
-        gap: 1.5%;
-    }
-}
-
-@media (max-width: 768px) {
-    .choices img {
-        width: 30%;
-    }
-    .choice-container {
-        width: auto;
-    }
-    .header-title {
-        font-size: 1.5em;
-    }
-    .score {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .choices img {
-        width: 45%;
-    }
-    .choice-container {
-        width: auto;
-    }
-    .header-title {
-        font-size: 1.2em;
-    }
-    .score {
-        font-size: 0.9em;
-    }
 }
