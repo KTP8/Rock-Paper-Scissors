@@ -35,7 +35,7 @@ function updateScore() {
 }
 
 function updateAttempts() {
-    document.getElementById("attemptsDisplayed").textContent = `${attempts}/10 attempts remaining`;
+    document.getElementById("attemptsRemaining").textContent = `${attempts}/10 attempts remaining`;
 }
 
 function determineWinner(playerChoice, computerChoice) {
@@ -103,6 +103,8 @@ function resetGame() {
     lastPlayerChoice = null;
 }
 
-// Initial setup to show default values
-updateScore();
-updateAttempts();
+// Ensure the document is fully loaded before executing script
+document.addEventListener('DOMContentLoaded', function() {
+    updateScore();
+    updateAttempts();
+});
