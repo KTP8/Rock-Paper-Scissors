@@ -6,11 +6,20 @@ let lastComputerChoice = null;
 let lastPlayerChoice = null;
 
 function getComputerChoice(difficulty) {
-    let choiceIndex = Math.random() < 0.8 ? Math.floor(Math.random() * choices.length) : null;
-    if (difficulty === "easy" || choiceIndex !== null) {
-        return choices[choiceIndex];
-    } else if (difficulty === "medium" || difficulty === "hard") {
-        return lastPlayerChoice ? getCounterChoice(lastPlayerChoice) : choices[Math.floor(Math.random() * choices.length)];
+    if (difficulty === "easy") {
+        return choices[Math.floor(Math.random() * choices.length)];
+    } else if (difficulty === "medium") {
+        if (Math.random() < 0.8) {
+            return choices[Math.floor(Math.random() * choices.length)];
+        } else {
+            return lastPlayerChoice === null ? choices[Math.floor(Math.random() * choices.length)] : getCounterChoice(lastPlayerChoice);
+        }
+    } else if (difficulty === "hard") {
+        if (Math.random() < 0.6) {
+            return choices[Math.floor(Math.random() * choices.length)];
+        } else {
+            return lastPlayerChoice === null ? choices[Math.floor(Math.random() * choices.length)] : getCounterChoice(lastPlayerChoice);
+        }
     }
 }
 
@@ -37,6 +46,10 @@ function updateAttempts() {
 }
 
 function determineWinner(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "draw";
+    }
+
     const winConditions = {
         "Rock": ["Scissors", "Lizard"],
         "Paper": ["Rock", "Spock"],
@@ -58,7 +71,21 @@ function playerChoice(choice) {
     const difficulty = document.getElementById('difficulty').value;
     const computerChoice = getComputerChoice(difficulty);
 
-    document.getElementById("computerChoiceImg").src = `assets/images/${computerChoice.toLowerCase()}.jpg`;
+    // Ensure the computerChoice is valid before attempting to call toLowerCase
+    if (!computerChoice) {
+        console.error('Invalid computer choice');
+        return;
+    }
+
+    const imagePaths = {
+        "Rock": "https://imgur.com/femz9LO.jpg",
+        "Paper": "https://imgur.com/DtQLv5q.jpg",
+        "Scissors": "https://imgur.com/XGDSf2s.jpg",
+        "Lizard": "https://imgur.com/AuVNy9m.jpg",
+        "Spock": "https://imgur.com/PpHIiny.jpg"
+    };
+
+    document.getElementById("computerChoiceImg").src = imagePaths[computerChoice];
     document.getElementById("computerChoiceImg").alt = computerChoice;
 
     const winner = determineWinner(choice, computerChoice);
@@ -76,6 +103,8 @@ function playerChoice(choice) {
         alert(`Game over! Final Score - YOU: ${playerScore} | COMPUTER: ${computerScore}`);
         resetGame();
     }
+
+    lastComputerChoice = computerChoice;
 }
 
 function resetGame() {
@@ -90,5 +119,6 @@ function resetGame() {
     lastPlayerChoice = null;
 }
 
+// Initial Setup
 updateScore();
 updateAttempts();
