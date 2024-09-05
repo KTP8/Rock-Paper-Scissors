@@ -1,101 +1,119 @@
 /* Basic styling */
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light background for contrast */
-    text-align: center;
 }
 
 header {
     display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between elements */
-    background-color: #cf805e; /* Header background */
-    padding: 0 20px; /* Horizontal padding */
-    height: 150px; /* Fixed header height */
-    position: relative; /* Positioning context for absolute elements */
+    justify-content: space-between;
+    padding: 0 20px; /* Padding for some spacing from edges */
+    width: 100%; /* Full viewport width */
+    background-color: #cf805e; /* Orange background */
+    height: 150px; /* Consistent header height */
+    position: relative; /* Required for absolute positioning of child elements */
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .logo-container img {
-    height: 100%; /* Full height of the header */
-}
-
-.header-title-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-    height: 120px; /* Fixed height */
-    width: auto; /* Auto width to maintain aspect ratio */
+    width: 80px;
+    height: auto;
 }
 
 .navigation-bar {
     position: absolute;
     top: 0;
-    right: 10px; /* Right alignment with padding */
+    right: 0;
 }
 
 .navbar ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar ul li {
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 .navbar ul li a {
     text-decoration: none;
-    color: #333; /* Dark text for readability */
-    font-weight: bold; /* Bold font for emphasis */
+    color: #333;
 }
 
 .score {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #fff; /* White color for contrast */
-    font-size: 0.8em; /* Smaller font size */
+    bottom: 0;
+    right: 0;
+    font-size: 0.8em;
+    color: #fff;
+    padding: 5px; /* Padding to ensure visibility and prevent cut-off */
 }
 
-/* Main content styling */
+@media (max-width: 768px) {
+    header {
+        height: 100px;
+    }
+
+    .logo-container img {
+        width: 60px;
+    }
+
+    .score {
+        font-size: 0.7em;
+    }
+}
+
 main {
     padding: 20px;
 }
 
-.difficulty-select,
-.attempts,
-.results,
-.score-board {
-    margin-top: 20px;
+.difficulty-select {
+    margin-bottom: 20px;
 }
 
 .choice-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.choice-container p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-.choice-container img {
-    cursor: pointer; /* Pointer cursor on hover */
-    width: 15vh; /* Responsive based on viewport height */
-    max-width: 100px; /* Maximum width */
+.choices img {
+    cursor: pointer;
+    width: 15vh;
+    max-width: 100px;
+    height: auto;
+    flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-    header {
-        height: 120px; /* Smaller header on mobile */
-    }
+.results img {
+    margin-top: 20px;
+    width: 15vh;
+    height: auto;
+}
 
-    .header-title-image {
-        height: 100px; /* Smaller logo on mobile */
-    }
-
-    .score {
-        font-size: 0.7em; /* Smaller score font on mobile */
-    }
+.attempts, .results, .score-board {
+    margin-top: 20px;
 }
