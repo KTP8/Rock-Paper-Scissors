@@ -15,29 +15,29 @@ header {
     background-color: #cf805e; /* Setting the background color for the header */
     justify-content: center; /* Center content vertically */
     position: relative; /* Necessary for absolute positioning of children */
-    min-height: 150px; /* Adjusted to provide more space */
-    height: 200px; /* Fixed height to maintain consistency */
+    height: 150px; /* Fixed height for consistent sizing */
 }
 
 .navigation-bar {
     position: absolute;
-    top: 10px; /* Align at the top of the header */
-    right: 10px; /* Align to the right */
+    top: 10px; /* Ensured alignment to the top */
+    right: 10px; /* Ensured alignment to the right */
     display: flex;
     justify-content: flex-end;
 }
 
 .logo-container img {
     position: absolute;
-    left: 10px; /* Aligned to the left */
-    top: 10px; /* Aligned to the top */
-    width: 80px; /* Fixed width to prevent distortion */
+    left: 0; /* Flush to the left */
+    top: 0; /* Flush to the top */
+    width: 80px; /* Fixed width for the logo */
     height: auto; /* Maintain aspect ratio */
 }
 
 .header-title-image {
     width: auto;
-    height: 80%; /* 80% of the header's height */
+    height: 120px; /* Adjusted height to fit within the header */
+    align-self: center; /* Ensures the image is centered vertically */
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -60,22 +60,21 @@ header {
 
 .score {
     position: absolute;
-    bottom: 10px; /* Position at the bottom */
-    right: 10px; /* Position to the right */
-    font-size: 0.8em; /* Smaller font size */
-    color: #fff; /* Color changed to white for visibility */
+    bottom: 10px; /* Maintained positioning */
+    right: 10px; /* Maintained positioning */
+    font-size: 0.8em; /* Font size maintained */
+    color: #fff; /* Enhanced visibility */
 }
 
 @media (max-width: 768px) {
     header {
-        min-height: 100px; /* Reduced header height on smaller screens */
-        height: 120px;
+        height: 100px; /* Adjusted for smaller screens */
     }
     .logo-container img {
-        width: 60px; /* Smaller logo size for mobile */
+        width: 60px; /* Adjusted for smaller screens */
     }
     .header-title-image {
-        height: 80%; /* Maintain height ratio on mobile */
+        height: 80px; /* Adjusted for smaller screens */
     }
     .score {
         font-size: 0.7em; /* Smaller font size on mobile */
