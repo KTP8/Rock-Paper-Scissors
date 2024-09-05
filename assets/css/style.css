@@ -29,16 +29,15 @@ header {
 h1 {
     font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
     color: white;
-    font-size: 2.5em;
-    margin: 10px 0;
-    text-align: center;
+    font-size: 2.5em; /* Enlarged to take up 50% width */
+    margin: 10px 0; /* Vertical spacing */
 }
 
 .navbar {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centers navbar under the title */
     display: flex;
     padding: 0;
 }
@@ -62,28 +61,20 @@ h1 {
 
 @media (max-width: 768px) {
     header {
-        height: 120px;
+        height: 120px; /* Smaller header on mobile */
     }
 
     .logo-container img {
-        width: 60px;
+        width: 60px; /* Smaller logo */
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 1.8em; /* Smaller font size for limited space */
     }
 }
 
 main {
     padding: 20px;
-    text-align: left;
-}
-
-ul {
-    text-align: left;
-    padding: 0;
-    margin: 0 auto; /* Center-align the list */
-    display: inline-block; /* Ensures the bullets appear with the list */
 }
 
 .difficulty-select, .attempts, .results, .score-board {
@@ -126,4 +117,20 @@ ul {
 
 .attempts, .results, .score-board {
     margin-top: 20px;
+}
+
+/* Additional styles for rule formatting */
+h3 {
+    text-decoration: underline;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px; /* Adjust padding to align bullet points correctly */
+}
+
+.important-text {
+    font-style: italic;
+    font-size: larger;
 }
