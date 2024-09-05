@@ -9,53 +9,49 @@ body {
 header {
     display: flex;
     align-items: center;
-    padding: 0 10px; /* Padding to avoid touching the edges */
-    width: 100%; /* Full viewport width */
-    background-color: #cf805e; /* Orange background */
-    height: 150px; /* Fixed height for consistency */
-    position: relative; /* Allows absolute positioning within the header */
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+    background-color: #cf805e;
+    height: 150px;
+    position: relative;
 }
 
 .logo-container {
-    position: absolute; /* Absolute positioning for precise control */
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100%; /* Full height of the header */
-    display: flex;
-    align-items: center; /* Center the logo vertically within its space */
 }
 
 .logo-container img {
-    width: 80px; /* Controlled width */
-    height: auto; /* Maintain aspect ratio */
+    width: 80px;
+    height: auto;
 }
 
 .header-title-image {
-    position: absolute; /* Absolute positioning for precise control */
-    top: 0;
-    left: 50%; /* Centering horizontally */
-    transform: translateX(-50%); /* Shift left by half its width */
-    height: 120px; /* Controlled height */
-    width: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    width: auto;
 }
 
 .navigation-bar {
     position: absolute;
     top: 0;
     right: 0;
-    display: flex;
-    align-items: center;
 }
 
 .navbar ul {
     list-style-type: none;
-    display: flex;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    padding: 0 15px;
 }
 
 .navbar ul li a {
@@ -77,15 +73,15 @@ header {
     }
 
     .logo-container img {
-        width: 60px; /* Adjusted width for smaller header */
+        width: 60px;
     }
 
     .header-title-image {
-        height: 80px; /* Adjusted height for smaller header */
+        height: 80px;
     }
 
     .score {
-        font-size: 0.7em; /* Smaller font size for mobile */
+        font-size: 0.7em;
     }
 }
 
@@ -101,7 +97,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
 }
 
 .choice-container p {
