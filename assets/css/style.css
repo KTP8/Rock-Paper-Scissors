@@ -11,7 +11,10 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    width: 100%
     background-color: #cf805e;
+    justify-content: center; /* Center content vertically */
+    min-height: 150px; /* To accomodate for img sizing */
 }
 
 .navigation-bar {
@@ -23,8 +26,15 @@ header {
 }
 
 .logo-container img {
-    height: 2vh; /* Relative size for responsiveness */
-    width: auto;
+    width: 20%;
+    height: auto;
+    position: absolute;
+    left: 0;
+}
+
+.header-title-image {
+    width: 50%; /* 50% width across all devices */
+    height: auto;
 }
 
 .navbar ul {
@@ -43,10 +53,13 @@ header {
     color: #333;
 }
 
-.header-title {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px 0;
+@media (max-width: 768px) {
+    .logo-container img {
+        width: 10%; /* Smaller width on mobile devices */
+    }
+    header {
+        min-height: 100px; /* Smaller height on mobile devices */
+    }
 }
 
 .score {
