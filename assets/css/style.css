@@ -87,8 +87,8 @@ main {
 
 .choices img {
     cursor: pointer;
-    width: 18%; /* Ensures a relative size */
-    max-width: 100px; /* Ensures image doesn't get too large on wider screens */
+    width: 15vh; /* Use the same relative height as the computer choice */
+    max-width: 100px; /* You can adjust this to match the size */
     height: auto;
     flex-shrink: 0; /* Prevent images from shrinking */
 }
@@ -109,8 +109,8 @@ main {
 @media (min-width: 769px) {
     /* Increase the size of images to fill screen width */
     .choices img {
-        width: 15%; /* Increase image size for desktop */
-        max-width: 180px; /* Allow the images to scale up */
+        width: 15vh; /* Make the image size similar to computer choice */
+        max-width: 180px; /* Maximum width for larger screens */
         height: auto;
     }
 
