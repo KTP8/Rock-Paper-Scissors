@@ -11,28 +11,35 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    width: 100%
-    background-color: #cf805e;
+    width: 100%; /* Ensuring width covers the entire viewport */
+    background-color: #cf805e; /* Setting the background color for the header */
     justify-content: center; /* Center content vertically */
-    min-height: 75px; /* To accomodate for img sizing */
+    min-height: 75px; /* To accommodate for img sizing */
+    position: relative; /* Necessary for absolute positioning of children */
 }
 
 .navigation-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 10px;
-    align-items: flex-start;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .logo-container img {
     width: 5%;
-    height: auto;
+    height: 75px; /* Defined height to match the header's height */
     position: absolute;
     left: 0;
     top: 0; /* Logo container should sit flush with top left */
 }
 
 .header-title-image {
-    width: auto; /* 50% width across all devices */
-    height: 30px;
+    width: auto; /* Width adjusts automatically based on height */
+    height: 75px; /* Matching height to maintain uniformity with the logo */
 }
 
 .navbar ul {
@@ -54,9 +61,13 @@ header {
 @media (max-width: 768px) {
     .logo-container img {
         width: 10%; /* Smaller width on mobile devices */
+        height: 50px; /* Smaller height to fit reduced header size */
     }
     .header-title-image {
-        height: 20px; /* Smaller height on mobile devices */
+        height: 50px; /* Smaller height on mobile devices */
+    }
+    header {
+        min-height: 50px; /* Smaller height on mobile devices */
     }
 }
 
@@ -91,7 +102,7 @@ main {
 .choices {
     display: flex;
     justify-content: center;
-    gap: 2%;
+    gap: 2%; /* Space between choices */
     margin-top: 20px;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
@@ -118,14 +129,12 @@ main {
 
 /* Desktop styling (larger screens) */
 @media (min-width: 769px) {
-    /* Increase the size of images to fill screen width */
     .choices img {
         width: 15vh; /* Make the image size similar to computer choice */
         max-width: 180px; /* Maximum width for larger screens */
         height: auto;
     }
 
-    /* Adjust the gap to distribute images evenly */
     .choices {
         gap: 1.5%; /* Smaller gap between images */
     }
@@ -140,25 +149,25 @@ main {
         width: auto; /* Ensure the container adapts to image size */
     }
     .header-title {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Larger font size for better readability */
     }
     .score {
-        font-size: 1em;
+        font-size: 1em; /* Smaller font size for compact layout */
     }
 }
 
 /* Mobile styling */
 @media (max-width: 480px) {
     .choices img {
-        width: 45%; /* Fits 2-3 choices per line */
+        width: 45%; /* Fits 2-3 choices per line, improving touch target size */
     }
     .choice-container {
-        width: auto;
+        width: auto; /* Adaptive width for responsive image display */
     }
     .header-title {
-        font-size: 1.2em;
+        font-size: 1.2em; /* Moderate increase in font size for readability */
     }
     .score {
-        font-size: 0.9em;
+        font-size: 0.9em; /* Smaller font size to fit mobile screens */
     }
 }
