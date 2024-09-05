@@ -8,12 +8,11 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0;
     width: 100%; /* Ensuring width covers the entire viewport */
     background-color: #cf805e; /* Setting the background color for the header */
-    justify-content: center; /* Center content vertically */
     position: relative; /* Necessary for absolute positioning of children */
     height: 150px; /* Fixed height for consistent sizing */
 }
@@ -35,11 +34,12 @@ header {
 }
 
 .header-title-image {
-    width: auto;
+    position: absolute; /* Absolute positioning for precise control */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to be truly centered */
     height: 120px; /* Adjusted height to fit within the header */
-    align-self: center; /* Ensures the image is centered vertically */
-    margin-top: auto;
-    margin-bottom: auto;
+    width: auto; /* Maintain aspect ratio */
 }
 
 .navbar ul {
