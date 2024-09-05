@@ -53,6 +53,7 @@ function getComputerChoice(difficulty) {
     }
 }
 
+
 // Function to update the score display
 function updateScore() {
     document.getElementById("playerScore").textContent = playerScore;
@@ -135,7 +136,9 @@ function resetGame() {
     attempts = 10;
     updateScore();
     updateAttempts();
-    document.getElementById("computerChoiceImg").src = "";
+
+    // Reset the computer choice image to the placeholder
+    document.getElementById("computerChoiceImg").src = "https://imgur.com/rzV1AO6.jpg";
     document.getElementById("computerChoiceImg").alt = "Computer Choice";
     lastComputerChoice = null;
     lastPlayerChoice = null;
