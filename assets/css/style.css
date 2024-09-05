@@ -8,10 +8,10 @@ body {
 
 header {
     display: flex;
-    align-items: center; /* Ensures vertical center alignment for all items */
-    justify-content: space-between;
+    flex-direction: column; /* Change layout to vertical stack for better control */
+    justify-content: center; /* Centers content vertically */
     background-color: #cf805e;
-    padding: 0 20px; /* Adjusted padding */
+    padding: 0 20px; /* Standard padding on sides */
     width: 100%;
     height: 150px;
     position: relative;
@@ -20,22 +20,28 @@ header {
 .logo-container img {
     width: 80px;
     height: auto;
+    position: absolute;
+    top: 10px; /* Adjust top margin to ensure it's nearly flush */
+    left: 10px;
 }
 
 h1 {
     font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
     color: white;
-    font-size: 1.8em; /* Maintains large readable size */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Perfect center alignment */
+    font-size: 1.8em; /* Large size for readability */
+    margin: 0 auto; /* Centers horizontally */
+    padding: 0 120px; /* Ensures text doesn't overflow on small screens */
 }
 
-.navigation-bar {
+.navigation-bar, .score {
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 0; /* Aligns with the top right initially */
-    right: 20px; /* Right padding to prevent cutoff */
+    right: 20px; /* Ensures spacing from the right edge */
+}
+
+.navbar {
+    top: 10px; /* Aligns with the top */
 }
 
 .navbar ul {
@@ -56,40 +62,33 @@ h1 {
 }
 
 .score {
-    position: absolute;
-    bottom: 0; /* Moved to the bottom right */
-    right: 20px; /* Right padding to prevent cutoff */
-    color: white;
+    bottom: 10px; /* Aligns with the bottom */
     font-size: 0.8em;
-    padding: 5px;
+    color: white;
 }
 
 @media (max-width: 768px) {
     header {
-        height: 120px; /* Adjusted height for mobile */
-    }
-
-    .logo-container img {
-        width: 60px; /* Smaller logo on mobile */
+        flex-direction: row; /* Adjusts layout to horizontal on smaller screens */
+        justify-content: space-between;
+        align-items: center;
     }
 
     h1 {
-        font-size: 1.4em; /* Smaller font size for mobile */
+        padding: 0; /* Removes padding to allow more space for text */
+        font-size: 1.4em; /* Smaller font for limited space */
     }
 
-    .score {
-        font-size: 0.7em; /* Smaller font size on mobile */
+    .logo-container img {
+        width: 60px; /* Smaller logo */
     }
 
     .navigation-bar, .score {
-        position: static; /* Removes absolute positioning on mobile */
-        width: 100%; /* Full width for visibility */
-        text-align: center; /* Center alignment for visibility */
-        order: 1; /* Makes nav and score appear below the title */
-    }
-
-    .navbar ul {
-        justify-content: center; /* Centers navbar items */
+        position: static; /* Removes absolute positioning for better flow */
+        order: 2; /* Positions nav and score below the title */
+        width: 100%;
+        justify-content: center; /* Center aligns items */
+        margin-top: 10px; /* Adds space between title and nav/score */
     }
 }
 
