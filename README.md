@@ -71,9 +71,9 @@ The game contains many different features, attributing to its useability and int
 ![Screenshot 2024-09-06 at 02 54 50](https://github.com/user-attachments/assets/13498e4e-3642-4804-a5a0-3a9fd96c2d54)
 
 - **Game Area (Attempts Remaining)**
-  - Attempt countdown; allowing for a maximum of 10 rounds to be played between user vs computer before the game is over. This updates live with each user selection.
+  - Attempt countdown; allowing for a maximum of 10 rounds to be played between user vs computer before the game is over. This updates live with each user selection. (See Bugs).
     
- ![Screenshot 2024-09-06 at 02 53 12](https://github.com/user-attachments/assets/a45d2787-25b9-4ec6-a448-be2175884f65)
+![Screenshot 2024-09-06 at 11 07 41](https://github.com/user-attachments/assets/fc232040-5165-43aa-bda1-3269d60b7880)
 
 ### Features left to Implement 
 - For further iterations of the game, a feature which allows users to submit a username and select a single difficulty for the entirety of their game before beginning their go and then be listed on a "highscores" page which lists the difficulty they played at, their name, and the score they recieved vs the computer. 
@@ -153,9 +153,28 @@ function determineWinner(playerChoice, computerChoice) {
 }
 ```
 
-### Unfixed Bugs 
-- On some runs of the game, the attempts remaining function does not work adequatley and remains fixed at 10/10. This is due to an error in loading javascript function into the html file at the correct time.
+### Console Errors found in DevTools (now fixed)
+- During the final iterations of the project, it was found that the scoreboard was not updating with each user attempt and remained stuck on 10/10:
+  
+![Screenshot 2024-09-06 at 02 53 12](https://github.com/user-attachments/assets/a45d2787-25b9-4ec6-a448-be2175884f65)
 
+This was an error within the function updateAttempts() within the .js file. After inspecting the console and the errors found within both the html and .js file, it was clear that this was due to a typo as well as an undefined element id. In fixing this the following code was produced:
+
+.js: 
+```
+function updateAttempts() {
+    document.getElementById("attemptsRemaining").textContent = `${attempts}/10 attempts remaining`;
+}
+```
+.html: 
+```
+<div class="score-board">
+            <h3>Score: YOU <span id="playerScore">0</span> - <span id="computerScore">0</span> COMPUTER</h3>
+        </div>
+        <div class="attempts">
+            <h3 id="attemptsRemaining">10/10 attempts remaining</h3>
+        </div>
+```
 ## Deployment 
 - The site was deployed to GitHub pages. The steps used to deploy are:
   - In the GitHub repository, navigate to the Settings tab.
