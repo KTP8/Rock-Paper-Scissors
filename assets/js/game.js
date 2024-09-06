@@ -30,8 +30,6 @@ function getCounterChoice(playerChoice) { // listed winning hands
 function updateScore() {
     document.getElementById("playerScore").textContent = playerScore;
     document.getElementById("computerScore").textContent = computerScore;
-    document.getElementById("playerScoreBottom").textContent = playerScore;
-    document.getElementById("computerScoreBottom").textContent = computerScore;
 }
 
 function updateAttempts() {
