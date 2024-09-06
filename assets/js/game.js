@@ -33,7 +33,7 @@ function updateScore() {
 }
 
 function updateAttempts() {
-    document.getElementById("attemptsDisplayed").textContent = `${attempts}/10 attempts remaining`;
+    document.getElementById("attemptsRemaining").textContent = `${attempts}/10 attempts remaining`;
 }
 
 function determineWinner(playerChoice, computerChoice) {
