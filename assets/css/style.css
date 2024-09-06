@@ -78,6 +78,7 @@ h1 {
 
     footer {
         width: 100%;
+        text-align:justify;
     }
 }
 
@@ -149,7 +150,7 @@ footer {
     background-color: grey;
     color: yellow;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     font-size: 0.9em;
